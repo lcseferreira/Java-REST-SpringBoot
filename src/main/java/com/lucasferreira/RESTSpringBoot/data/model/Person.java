@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "tb_person ")
-public class PersonVO implements Serializable {
+public class Person implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,9 +21,9 @@ public class PersonVO implements Serializable {
     private String address;
 
     @Column(nullable = false)
-    private Character gender;
+    private String gender;
 
-    public PersonVO() {
+    public Person() {
     }
 
     public Long getId() {
@@ -58,11 +58,11 @@ public class PersonVO implements Serializable {
         this.address = address;
     }
 
-    public Character getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Character gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

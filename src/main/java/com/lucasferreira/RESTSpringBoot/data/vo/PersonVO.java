@@ -8,7 +8,7 @@ public class PersonVO implements Serializable {
     private String firstName;
     private String lastName;
     private String address;
-    private Character gender;
+    private String gender;
 
     public PersonVO() {
     }
@@ -45,11 +45,11 @@ public class PersonVO implements Serializable {
         this.address = address;
     }
 
-    public Character getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Character gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

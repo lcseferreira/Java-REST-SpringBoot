@@ -1,6 +1,6 @@
 package com.lucasferreira.RESTSpringBoot.controllers;
 
-import com.lucasferreira.RESTSpringBoot.data.model.PersonVO;
+import com.lucasferreira.RESTSpringBoot.data.vo.PersonVO;
 import com.lucasferreira.RESTSpringBoot.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
