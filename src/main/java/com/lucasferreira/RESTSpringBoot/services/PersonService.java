@@ -1,7 +1,7 @@
 package com.lucasferreira.RESTSpringBoot.services;
 
 import com.lucasferreira.RESTSpringBoot.exceptions.ResourceNotFoundException;
-import com.lucasferreira.RESTSpringBoot.model.Person;
+import com.lucasferreira.RESTSpringBoot.data.model.PersonVO;
 import com.lucasferreira.RESTSpringBoot.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,21 +14,21 @@ public class PersonService {
     @Autowired
     private PersonRepository repository;
 
-    public List<Person> findAll() {
+    public List<PersonVO> findAll() {
         return repository.findAll();
     }
 
-    public Person findById(Long id) {
+    public PersonVO findById(Long id) {
         return repository.findById(id).
                 orElseThrow(() -> new ResourceNotFoundException("No records found for this ID"));
     }
 
-    public Person create(Person person) {
+    public PersonVO create(PersonVO person) {
         return repository.save(person);
     }
 
-    public Person update(Person person) {
-        Person entity = repository.findById(person.getId()).
+    public PersonVO update(PersonVO person) {
+        PersonVO entity = repository.findById(person.getId()).
                 orElseThrow(() -> new ResourceNotFoundException("No records found for this ID"));
 
         entity.setFirstName(person.getFirstName());
@@ -39,7 +39,7 @@ public class PersonService {
         return repository.save(entity);
     }
     public void delete(Long id) {
-        Person entity = repository.findById(id).
+        PersonVO entity = repository.findById(id).
                 orElseThrow(() -> new ResourceNotFoundException("No records found for this ID"));
 
         repository.delete(entity);

@@ -1,11 +1,11 @@
-package com.lucasferreira.RESTSpringBoot.model;
+package com.lucasferreira.RESTSpringBoot.data.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "tb_person ")
-public class Person implements Serializable {
+public class PersonVO implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,7 @@ public class Person implements Serializable {
     @Column(nullable = false)
     private Character gender;
 
-    public Person() {
+    public PersonVO() {
     }
 
     public Long getId() {
