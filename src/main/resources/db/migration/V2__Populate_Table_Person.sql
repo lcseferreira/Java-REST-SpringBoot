@@ -1,0 +1,1 @@
+INSERT INTO `tb_person` VALUES (2,'Dourado','Maria','F','Silva'),(3,'Dourado','Lucas','M','Ferreira'),(4,'Dourado','Lara','F','Maria'),(5,'Dourado','Renata','F','Ferreira'),(6,'Sorocaba','Fábio','M','Costa'),(7,'Maringá','João','M','Silva'),(8,'Maringá','Ana','M','Cláudia'),(9,'Jaú','Cleber','M','Silva');
