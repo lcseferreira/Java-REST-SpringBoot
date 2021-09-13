@@ -1,16 +1,18 @@
-package com.lucasferreira.RESTSpringBoot.data.vo;
+package com.lucasferreira.RESTSpringBoot.data.vo.v2;
 
 import java.io.Serializable;
+import java.util.Date;
 
-public class PersonVO implements Serializable {
+public class PersonVOV2 implements Serializable {
 
     private Long id;
     private String firstName;
     private String lastName;
     private String address;
     private String gender;
+    private Date birthday;
 
-    public PersonVO() {
+    public PersonVOV2() {
     }
 
     public Long getId() {
@@ -53,4 +55,11 @@ public class PersonVO implements Serializable {
         this.gender = gender;
     }
 
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
 }

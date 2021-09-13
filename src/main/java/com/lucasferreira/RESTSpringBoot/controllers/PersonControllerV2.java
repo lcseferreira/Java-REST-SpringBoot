@@ -1,6 +1,7 @@
 package com.lucasferreira.RESTSpringBoot.controllers;
 
-import com.lucasferreira.RESTSpringBoot.data.vo.PersonVO;
+import com.lucasferreira.RESTSpringBoot.data.vo.v1.PersonVOV1;
+import com.lucasferreira.RESTSpringBoot.data.vo.v2.PersonVOV2;
 import com.lucasferreira.RESTSpringBoot.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,33 +11,33 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping(value = "/person")
-public class PersonController {
+@RequestMapping(value = "/person/v2")
+public class PersonControllerV2 {
 
     @Autowired
     private PersonService service;
 
     @GetMapping
-    public ResponseEntity<List<PersonVO>> findAll() {
-        List<PersonVO> persons = service.findAll();
+    public ResponseEntity<List<PersonVOV1>> findAll() {
+        List<PersonVOV1> persons = service.findAll();
         return ResponseEntity.ok(persons);
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<PersonVO> findById(@PathVariable Long id) {
-        PersonVO person = service.findById(id);
+    public ResponseEntity<PersonVOV1> findById(@PathVariable Long id) {
+        PersonVOV1 person = service.findById(id);
         return ResponseEntity.ok(person);
     }
 
     @PostMapping
-    public ResponseEntity<PersonVO> create(@RequestBody PersonVO person) {
-        PersonVO newPerson = service.create(person);
+    public ResponseEntity<PersonVOV2> createV2(@RequestBody PersonVOV2 person) {
+        PersonVOV2 newPerson = service.createV2(person);
         return ResponseEntity.ok(newPerson);
     }
 
     @PutMapping
-    public ResponseEntity<PersonVO> update(@RequestBody PersonVO person) {
-        PersonVO updatePerson = service.update(person);
+    public ResponseEntity<PersonVOV1> update(@RequestBody PersonVOV1 person) {
+        PersonVOV1 updatePerson = service.update(person);
         return ResponseEntity.ok(updatePerson);
     }
 
